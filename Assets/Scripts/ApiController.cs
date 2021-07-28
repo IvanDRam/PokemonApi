@@ -76,7 +76,7 @@ public class ApiController : MonoBehaviour
             yield return pokeSRequest.SendWebRequest();
             
             //revisar en caso de error
-            if(pokeSRequest.result==UnityWebRequest.Result.ProtocolError){
+            if(pokeSRequest.result!=UnityWebRequest.Result.Success){
                 Debug.LogError(pokeRequest.error);
                 yield break;
             }
